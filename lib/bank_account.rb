@@ -1,7 +1,5 @@
 class BankAccount
 
-  @@all_accounts
-
   attr_accessor :balance, :status
   attr_reader :name
 
@@ -12,19 +10,19 @@ class BankAccount
     end
 
     def deposit(money)
-      @balance+=money
+      self.balance+=money
     end
 
     def display_balance
-      "Your balance is $#{@balance}."
+      "Your balance is $#{self.balance}."
     end
 
     def valid?
-      @status == "open" && @balance>0
+      self.status == "open" && self.balance > 0
     end
 
     def close_account
-      @status = "closed"
+      self.status = "closed"
     end
 
 
